@@ -85,8 +85,6 @@ If you receive `ImportError: cannot import name 'genai' from 'google'`, install 
 python -m pip install google-genai
 ```
 
-If this package was missing from `requirements.txt`, notify the repository maintainer so the dependency list can be updated.
-
 ## 5. Configure the Gemini API key
 
 The pipeline requires a Google Gemini API key.
