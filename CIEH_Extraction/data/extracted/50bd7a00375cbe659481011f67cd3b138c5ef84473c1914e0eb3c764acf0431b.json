@@ -1,0 +1,221 @@
+{
+    "source_id": "Source_002",
+    "response_id": "Response_002",
+    "filename": "FOI002930_Response.pdf",
+    "source": {
+        "original_filename": "FOI002930_Response.pdf",
+        "relative_path": null,
+        "file_path": "E:\\CIEH\\180_Degrees_Consulting_CIEH\\CIEH_Extraction\\data\\raw\\FOI002930_Response.pdf",
+        "file_hash": "50bd7a00375cbe659481011f67cd3b138c5ef84473c1914e0eb3c764acf0431b",
+        "response_id": "Response_002",
+        "file_size": 113557
+    },
+    "model_provider": "gemini",
+    "extraction": {
+        "council_name": "Royal Borough of Windsor & Maidenhead",
+        "records": [
+            {
+                "year": "2015",
+                "category": "tattoo_premises",
+                "metric_type": "unknown",
+                "count": 3,
+                "evidence_text": "Premises 2025 2024 2023 2022 2021 2020 2019 2018 2017 2016 2015 3 9 2 13 6 5 11 7 4 2 3",
+                "source_location": "Our Response, Q2",
+                "notes": "Reported under Q2 for premises. Document does not specify whether figures represent new registrations or active register totals."
+            },
+            {
+                "year": "2016",
+                "category": "tattoo_premises",
+                "metric_type": "unknown",
+                "count": 2,
+                "evidence_text": "Premises 2025 2024 2023 2022 2021 2020 2019 2018 2017 2016 2015 3 9 2 13 6 5 11 7 4 2 3",
+                "source_location": "Our Response, Q2",
+                "notes": "Reported under Q2 for premises. Document does not specify whether figures represent new registrations or active register totals."
+            },
+            {
+                "year": "2017",
+                "category": "tattoo_premises",
+                "metric_type": "unknown",
+                "count": 4,
+                "evidence_text": "Premises 2025 2024 2023 2022 2021 2020 2019 2018 2017 2016 2015 3 9 2 13 6 5 11 7 4 2 3",
+                "source_location": "Our Response, Q2",
+                "notes": "Reported under Q2 for premises. Document does not specify whether figures represent new registrations or active register totals."
+            },
+            {
+                "year": "2018",
+                "category": "tattoo_premises",
+                "metric_type": "unknown",
+                "count": 7,
+                "evidence_text": "Premises 2025 2024 2023 2022 2021 2020 2019 2018 2017 2016 2015 3 9 2 13 6 5 11 7 4 2 3",
+                "source_location": "Our Response, Q2",
+                "notes": "Reported under Q2 for premises. Document does not specify whether figures represent new registrations or active register totals."
+            },
+            {
+                "year": "2019",
+                "category": "tattoo_premises",
+                "metric_type": "unknown",
+                "count": 11,
+                "evidence_text": "Premises 2025 2024 2023 2022 2021 2020 2019 2018 2017 2016 2015 3 9 2 13 6 5 11 7 4 2 3",
+                "source_location": "Our Response, Q2",
+                "notes": "Reported under Q2 for premises. Document does not specify whether figures represent new registrations or active register totals."
+            },
+            {
+                "year": "2020",
+                "category": "tattoo_premises",
+                "metric_type": "unknown",
+                "count": 5,
+                "evidence_text": "Premises 2025 2024 2023 2022 2021 2020 2019 2018 2017 2016 2015 3 9 2 13 6 5 11 7 4 2 3",
+                "source_location": "Our Response, Q2",
+                "notes": "Reported under Q2 for premises. Document does not specify whether figures represent new registrations or active register totals."
+            },
+            {
+                "year": "2021",
+                "category": "tattoo_premises",
+                "metric_type": "unknown",
+                "count": 6,
+                "evidence_text": "Premises 2025 2024 2023 2022 2021 2020 2019 2018 2017 2016 2015 3 9 2 13 6 5 11 7 4 2 3",
+                "source_location": "Our Response, Q2",
+                "notes": "Reported under Q2 for premises. Document does not specify whether figures represent new registrations or active register totals."
+            },
+            {
+                "year": "2022",
+                "category": "tattoo_premises",
+                "metric_type": "unknown",
+                "count": 13,
+                "evidence_text": "Premises 2025 2024 2023 2022 2021 2020 2019 2018 2017 2016 2015 3 9 2 13 6 5 11 7 4 2 3",
+                "source_location": "Our Response, Q2",
+                "notes": "Reported under Q2 for premises. Document does not specify whether figures represent new registrations or active register totals."
+            },
+            {
+                "year": "2023",
+                "category": "tattoo_premises",
+                "metric_type": "unknown",
+                "count": 2,
+                "evidence_text": "Premises 2025 2024 2023 2022 2021 2020 2019 2018 2017 2016 2015 3 9 2 13 6 5 11 7 4 2 3",
+                "source_location": "Our Response, Q2",
+                "notes": "Reported under Q2 for premises. Document does not specify whether figures represent new registrations or active register totals."
+            },
+            {
+                "year": "2024",
+                "category": "tattoo_premises",
+                "metric_type": "unknown",
+                "count": 9,
+                "evidence_text": "Premises 2025 2024 2023 2022 2021 2020 2019 2018 2017 2016 2015 3 9 2 13 6 5 11 7 4 2 3",
+                "source_location": "Our Response, Q2",
+                "notes": "Reported under Q2 for premises. Document does not specify whether figures represent new registrations or active register totals."
+            },
+            {
+                "year": "2025",
+                "category": "tattoo_premises",
+                "metric_type": "unknown",
+                "count": 3,
+                "evidence_text": "Premises 2025 2024 2023 2022 2021 2020 2019 2018 2017 2016 2015 3 9 2 13 6 5 11 7 4 2 3",
+                "source_location": "Our Response, Q2",
+                "notes": "Reported under Q2 for premises. Document does not specify whether figures represent new registrations or active register totals."
+            },
+            {
+                "year": "2015",
+                "category": "tattoo_practitioners",
+                "metric_type": "unknown",
+                "count": 4,
+                "evidence_text": "Practitioners 2025 2024 2023 2022 2021 2020 2019 2018 2017 2016 2015 6 14 11 14 11 7 14 16 7 2 4",
+                "source_location": "Our Response, Q2",
+                "notes": "Reported under Q2 for practitioners. Document does not specify whether figures represent new registrations or active register totals."
+            },
+            {
+                "year": "2016",
+                "category": "tattoo_practitioners",
+                "metric_type": "unknown",
+                "count": 2,
+                "evidence_text": "Practitioners 2025 2024 2023 2022 2021 2020 2019 2018 2017 2016 2015 6 14 11 14 11 7 14 16 7 2 4",
+                "source_location": "Our Response, Q2",
+                "notes": "Reported under Q2 for practitioners. Document does not specify whether figures represent new registrations or active register totals."
+            },
+            {
+                "year": "2017",
+                "category": "tattoo_practitioners",
+                "metric_type": "unknown",
+                "count": 7,
+                "evidence_text": "Practitioners 2025 2024 2023 2022 2021 2020 2019 2018 2017 2016 2015 6 14 11 14 11 7 14 16 7 2 4",
+                "source_location": "Our Response, Q2",
+                "notes": "Reported under Q2 for practitioners. Document does not specify whether figures represent new registrations or active register totals."
+            },
+            {
+                "year": "2018",
+                "category": "tattoo_practitioners",
+                "metric_type": "unknown",
+                "count": 16,
+                "evidence_text": "Practitioners 2025 2024 2023 2022 2021 2020 2019 2018 2017 2016 2015 6 14 11 14 11 7 14 16 7 2 4",
+                "source_location": "Our Response, Q2",
+                "notes": "Reported under Q2 for practitioners. Document does not specify whether figures represent new registrations or active register totals."
+            },
+            {
+                "year": "2019",
+                "category": "tattoo_practitioners",
+                "metric_type": "unknown",
+                "count": 14,
+                "evidence_text": "Practitioners 2025 2024 2023 2022 2021 2020 2019 2018 2017 2016 2015 6 14 11 14 11 7 14 16 7 2 4",
+                "source_location": "Our Response, Q2",
+                "notes": "Reported under Q2 for practitioners. Document does not specify whether figures represent new registrations or active register totals."
+            },
+            {
+                "year": "2020",
+                "category": "tattoo_practitioners",
+                "metric_type": "unknown",
+                "count": 7,
+                "evidence_text": "Practitioners 2025 2024 2023 2022 2021 2020 2019 2018 2017 2016 2015 6 14 11 14 11 7 14 16 7 2 4",
+                "source_location": "Our Response, Q2",
+                "notes": "Reported under Q2 for practitioners. Document does not specify whether figures represent new registrations or active register totals."
+            },
+            {
+                "year": "2021",
+                "category": "tattoo_practitioners",
+                "metric_type": "unknown",
+                "count": 11,
+                "evidence_text": "Practitioners 2025 2024 2023 2022 2021 2020 2019 2018 2017 2016 2015 6 14 11 14 11 7 14 16 7 2 4",
+                "source_location": "Our Response, Q2",
+                "notes": "Reported under Q2 for practitioners. Document does not specify whether figures represent new registrations or active register totals."
+            },
+            {
+                "year": "2022",
+                "category": "tattoo_practitioners",
+                "metric_type": "unknown",
+                "count": 14,
+                "evidence_text": "Practitioners 2025 2024 2023 2022 2021 2020 2019 2018 2017 2016 2015 6 14 11 14 11 7 14 16 7 2 4",
+                "source_location": "Our Response, Q2",
+                "notes": "Reported under Q2 for practitioners. Document does not specify whether figures represent new registrations or active register totals."
+            },
+            {
+                "year": "2023",
+                "category": "tattoo_practitioners",
+                "metric_type": "unknown",
+                "count": 11,
+                "evidence_text": "Practitioners 2025 2024 2023 2022 2021 2020 2019 2018 2017 2016 2015 6 14 11 14 11 7 14 16 7 2 4",
+                "source_location": "Our Response, Q2",
+                "notes": "Reported under Q2 for practitioners. Document does not specify whether figures represent new registrations or active register totals."
+            },
+            {
+                "year": "2024",
+                "category": "tattoo_practitioners",
+                "metric_type": "unknown",
+                "count": 14,
+                "evidence_text": "Practitioners 2025 2024 2023 2022 2021 2020 2019 2018 2017 2016 2015 6 14 11 14 11 7 14 16 7 2 4",
+                "source_location": "Our Response, Q2",
+                "notes": "Reported under Q2 for practitioners. Document does not specify whether figures represent new registrations or active register totals."
+            },
+            {
+                "year": "2025",
+                "category": "tattoo_practitioners",
+                "metric_type": "unknown",
+                "count": 6,
+                "evidence_text": "Practitioners 2025 2024 2023 2022 2021 2020 2019 2018 2017 2016 2015 6 14 11 14 11 7 14 16 7 2 4",
+                "source_location": "Our Response, Q2",
+                "notes": "Reported under Q2 for practitioners. Document does not specify whether figures represent new registrations or active register totals."
+            }
+        ],
+        "review_required": true,
+        "review_reason": "Figures in Q2 are organized by year but it is not specified whether they represent annual new registrations, active register totals, or applications. Additionally, business rates database figures from Q1 were excluded as they measure taxation accounts rather than environmental health licensing registers."
+    },
+    "review_status": "pending",
+    "validation_status": "schema_valid"
+}

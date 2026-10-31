@@ -1,0 +1,29 @@
+# ingores Python environment
+.venv/
+__pycache__/
+*.py[cod]
+
+# igores Environment variables
+.env
+.env.*
+!.env.example
+
+# ignores client data and pipeline generated data
+data/raw/
+data/parsed/
+data/review/
+data/output/
+data/extracted/
+
+# ignores locally run databases
+*.db
+*.sqlite
+*.sqlite3
+
+# ignires testing and tooling caches
+.pytest_cache/
+.ruff_cache/
+
+# OS file
+.DS_Store
+Thumbs.db

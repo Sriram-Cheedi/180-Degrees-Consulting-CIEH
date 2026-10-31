@@ -1,0 +1,203 @@
+{
+    "source_id": "Source_003",
+    "response_id": "Response_003",
+    "filename": "Lewisham_Borough_Council.txt",
+    "source": {
+        "original_filename": "Lewisham_Borough_Council.txt",
+        "relative_path": null,
+        "file_path": "E:\\CIEH\\180_Degrees_Consulting_CIEH\\CIEH_Extraction\\data\\raw\\Lewisham_Borough_Council.txt",
+        "file_hash": "ee25eb85eef9fa11cfd1d2f40df3f748fb3963a6f145310c2c164be1ad5966e0",
+        "response_id": "Response_003",
+        "file_size": 4204
+    },
+    "model_provider": "gemini",
+    "extraction": {
+        "council_name": "London Borough of Lewisham",
+        "records": [
+            {
+                "year": "2016/17",
+                "category": "tattoo_premises",
+                "metric_type": "active_register_total",
+                "count": 15,
+                "evidence_text": "Q2) Please advise, based on your Environmental Health or Licensing records, how many premises that specialised in the provision of tattooing services or tattoo studios were licensed (special treatment premises) with you during each financial year... Financial Year: 2016/17 Number of Licensed Tattoo Premises: 15",
+                "source_location": "Q2 table, row 1",
+                "notes": null
+            },
+            {
+                "year": "2017/18",
+                "category": "tattoo_premises",
+                "metric_type": "active_register_total",
+                "count": 16,
+                "evidence_text": "2017/18 16",
+                "source_location": "Q2 table, row 2",
+                "notes": null
+            },
+            {
+                "year": "2018/19",
+                "category": "tattoo_premises",
+                "metric_type": "active_register_total",
+                "count": 14,
+                "evidence_text": "2018/19 14",
+                "source_location": "Q2 table, row 3",
+                "notes": null
+            },
+            {
+                "year": "2019/20",
+                "category": "tattoo_premises",
+                "metric_type": "active_register_total",
+                "count": 16,
+                "evidence_text": "2019/20 16",
+                "source_location": "Q2 table, row 4",
+                "notes": null
+            },
+            {
+                "year": "2020/21",
+                "category": "tattoo_premises",
+                "metric_type": "active_register_total",
+                "count": 16,
+                "evidence_text": "2020/21 16",
+                "source_location": "Q2 table, row 5",
+                "notes": null
+            },
+            {
+                "year": "2021/22",
+                "category": "tattoo_premises",
+                "metric_type": "active_register_total",
+                "count": 17,
+                "evidence_text": "2021/22 17",
+                "source_location": "Q2 table, row 6",
+                "notes": null
+            },
+            {
+                "year": "2022/23",
+                "category": "tattoo_premises",
+                "metric_type": "active_register_total",
+                "count": 18,
+                "evidence_text": "2022/23 18",
+                "source_location": "Q2 table, row 7",
+                "notes": null
+            },
+            {
+                "year": "2023/24",
+                "category": "tattoo_premises",
+                "metric_type": "active_register_total",
+                "count": 20,
+                "evidence_text": "2023/24 20",
+                "source_location": "Q2 table, row 8",
+                "notes": null
+            },
+            {
+                "year": "2024/25",
+                "category": "tattoo_premises",
+                "metric_type": "active_register_total",
+                "count": 23,
+                "evidence_text": "2024/25 23",
+                "source_location": "Q2 table, row 9",
+                "notes": null
+            },
+            {
+                "year": "2025/26",
+                "category": "tattoo_premises",
+                "metric_type": "active_register_total",
+                "count": 21,
+                "evidence_text": "2025/26 21",
+                "source_location": "Q2 table, row 10",
+                "notes": null
+            },
+            {
+                "year": "2016/17",
+                "category": "tattoo_practitioners",
+                "metric_type": "active_register_total",
+                "count": 28,
+                "evidence_text": "Q2a) and how many individual practitioners within the aforementioned premises were licensed, or covered by a license, in total during each financial year... Financial Year: 2016/17 Total Practitioners: 28",
+                "source_location": "Q2a table, row 1",
+                "notes": null
+            },
+            {
+                "year": "2017/18",
+                "category": "tattoo_practitioners",
+                "metric_type": "active_register_total",
+                "count": 27,
+                "evidence_text": "2017/18 27",
+                "source_location": "Q2a table, row 2",
+                "notes": null
+            },
+            {
+                "year": "2018/19",
+                "category": "tattoo_practitioners",
+                "metric_type": "active_register_total",
+                "count": 28,
+                "evidence_text": "2018/19 28",
+                "source_location": "Q2a table, row 3",
+                "notes": null
+            },
+            {
+                "year": "2019/20",
+                "category": "tattoo_practitioners",
+                "metric_type": "active_register_total",
+                "count": 31,
+                "evidence_text": "2019/20 31",
+                "source_location": "Q2a table, row 4",
+                "notes": null
+            },
+            {
+                "year": "2020/21",
+                "category": "tattoo_practitioners",
+                "metric_type": "active_register_total",
+                "count": 33,
+                "evidence_text": "2020/21 33",
+                "source_location": "Q2a table, row 5",
+                "notes": null
+            },
+            {
+                "year": "2021/22",
+                "category": "tattoo_practitioners",
+                "metric_type": "active_register_total",
+                "count": 34,
+                "evidence_text": "2021/22 34",
+                "source_location": "Q2a table, row 6",
+                "notes": null
+            },
+            {
+                "year": "2022/23",
+                "category": "tattoo_practitioners",
+                "metric_type": "active_register_total",
+                "count": 60,
+                "evidence_text": "2022/23 60",
+                "source_location": "Q2a table, row 7",
+                "notes": null
+            },
+            {
+                "year": "2023/24",
+                "category": "tattoo_practitioners",
+                "metric_type": "active_register_total",
+                "count": 68,
+                "evidence_text": "2023/24 68",
+                "source_location": "Q2a table, row 8",
+                "notes": null
+            },
+            {
+                "year": "2024/25",
+                "category": "tattoo_practitioners",
+                "metric_type": "active_register_total",
+                "count": 82,
+                "evidence_text": "2024/25 82",
+                "source_location": "Q2a table, row 9",
+                "notes": null
+            },
+            {
+                "year": "2025/26",
+                "category": "tattoo_practitioners",
+                "metric_type": "active_register_total",
+                "count": 79,
+                "evidence_text": "2025/26 79",
+                "source_location": "Q2a table, row 10",
+                "notes": null
+            }
+        ],
+        "review_required": false,
+        "review_reason": null
+    },
+    "review_status": "pending",
+    "validation_status": "schema_valid"
+}

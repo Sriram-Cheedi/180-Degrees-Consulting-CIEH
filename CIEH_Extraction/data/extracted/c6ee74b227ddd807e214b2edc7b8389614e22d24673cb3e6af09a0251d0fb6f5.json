@@ -1,0 +1,270 @@
+{
+    "source_id": "Source_004",
+    "response_id": "Response_004",
+    "filename": "Response some not held.pdf",
+    "source": {
+        "file_hash": "c6ee74b227ddd807e214b2edc7b8389614e22d24673cb3e6af09a0251d0fb6f5"
+    },
+    "model_provider": "gemini",
+    "extraction": {
+        "council_name": "Bristol City Council",
+        "records": [
+            {
+                "year": "2016",
+                "category": "combined_premises_and_practitioners",
+                "metric_type": "new_registrations",
+                "count": 7,
+                "evidence_text": "During each of the financial years the following numbers of applicants were registered by this authority | Financial year Commencing 1 April: 2016 | S.15 Piercing Registration .- Tattooing PERS & PREM: 7",
+                "source_location": "Table 'During each of the financial years...', Row '2016', Column 'S.15 Piercing Registration .- Tattooing PERS & PREM'",
+                "notes": "Financial year commencing 1 April 2016."
+            },
+            {
+                "year": "2016",
+                "category": "tattoo_practitioners",
+                "metric_type": "new_registrations",
+                "count": 7,
+                "evidence_text": "During each of the financial years the following numbers of applicants were registered by this authority | Financial year Commencing 1 April: 2016 | S.15 Piercing Registration. Tattooing -PERSON: 7",
+                "source_location": "Table 'During each of the financial years...', Row '2016', Column 'S.15 Piercing Registration. Tattooing -PERSON'",
+                "notes": "Financial year commencing 1 April 2016."
+            },
+            {
+                "year": "2017",
+                "category": "combined_premises_and_practitioners",
+                "metric_type": "new_registrations",
+                "count": 9,
+                "evidence_text": "During each of the financial years the following numbers of applicants were registered by this authority | Financial year Commencing 1 April: 2017 | S.15 Piercing Registration .- Tattooing PERS & PREM: 9",
+                "source_location": "Table 'During each of the financial years...', Row '2017', Column 'S.15 Piercing Registration .- Tattooing PERS & PREM'",
+                "notes": "Financial year commencing 1 April 2017."
+            },
+            {
+                "year": "2017",
+                "category": "tattoo_practitioners",
+                "metric_type": "new_registrations",
+                "count": 21,
+                "evidence_text": "During each of the financial years the following numbers of applicants were registered by this authority | Financial year Commencing 1 April: 2017 | S.15 Piercing Registration. Tattooing -PERSON: 21",
+                "source_location": "Table 'During each of the financial years...', Row '2017', Column 'S.15 Piercing Registration. Tattooing -PERSON'",
+                "notes": "Financial year commencing 1 April 2017."
+            },
+            {
+                "year": "2017",
+                "category": "tattoo_premises",
+                "metric_type": "new_registrations",
+                "count": 5,
+                "evidence_text": "During each of the financial years the following numbers of applicants were registered by this authority | Financial year Commencing 1 April: 2017 | S.15 Piercing Registration.- Tattooing PREMISES: 5",
+                "source_location": "Table 'During each of the financial years...', Row '2017', Column 'S.15 Piercing Registration.- Tattooing PREMISES'",
+                "notes": "Financial year commencing 1 April 2017."
+            },
+            {
+                "year": "2018",
+                "category": "combined_premises_and_practitioners",
+                "metric_type": "new_registrations",
+                "count": 5,
+                "evidence_text": "During each of the financial years the following numbers of applicants were registered by this authority | Financial year Commencing 1 April: 2018 | S.15 Piercing Registration .- Tattooing PERS & PREM: 5",
+                "source_location": "Table 'During each of the financial years...', Row '2018', Column 'S.15 Piercing Registration .- Tattooing PERS & PREM'",
+                "notes": "Financial year commencing 1 April 2018."
+            },
+            {
+                "year": "2018",
+                "category": "tattoo_practitioners",
+                "metric_type": "new_registrations",
+                "count": 27,
+                "evidence_text": "During each of the financial years the following numbers of applicants were registered by this authority | Financial year Commencing 1 April: 2018 | S.15 Piercing Registration. Tattooing -PERSON: 27",
+                "source_location": "Table 'During each of the financial years...', Row '2018', Column 'S.15 Piercing Registration. Tattooing -PERSON'",
+                "notes": "Financial year commencing 1 April 2018."
+            },
+            {
+                "year": "2018",
+                "category": "tattoo_premises",
+                "metric_type": "new_registrations",
+                "count": 7,
+                "evidence_text": "During each of the financial years the following numbers of applicants were registered by this authority | Financial year Commencing 1 April: 2018 | S.15 Piercing Registration.- Tattooing PREMISES: 7",
+                "source_location": "Table 'During each of the financial years...', Row '2018', Column 'S.15 Piercing Registration.- Tattooing PREMISES'",
+                "notes": "Financial year commencing 1 April 2018."
+            },
+            {
+                "year": "2019",
+                "category": "combined_premises_and_practitioners",
+                "metric_type": "new_registrations",
+                "count": 12,
+                "evidence_text": "During each of the financial years the following numbers of applicants were registered by this authority | Financial year Commencing 1 April: 2019 | S.15 Piercing Registration .- Tattooing PERS & PREM: 12",
+                "source_location": "Table 'During each of the financial years...', Row '2019', Column 'S.15 Piercing Registration .- Tattooing PERS & PREM'",
+                "notes": "Financial year commencing 1 April 2019."
+            },
+            {
+                "year": "2019",
+                "category": "tattoo_practitioners",
+                "metric_type": "new_registrations",
+                "count": 28,
+                "evidence_text": "During each of the financial years the following numbers of applicants were registered by this authority | Financial year Commencing 1 April: 2019 | S.15 Piercing Registration. Tattooing -PERSON: 28",
+                "source_location": "Table 'During each of the financial years...', Row '2019', Column 'S.15 Piercing Registration. Tattooing -PERSON'",
+                "notes": "Financial year commencing 1 April 2019."
+            },
+            {
+                "year": "2019",
+                "category": "tattoo_premises",
+                "metric_type": "new_registrations",
+                "count": 8,
+                "evidence_text": "During each of the financial years the following numbers of applicants were registered by this authority | Financial year Commencing 1 April: 2019 | S.15 Piercing Registration.- Tattooing PREMISES: 8",
+                "source_location": "Table 'During each of the financial years...', Row '2019', Column 'S.15 Piercing Registration.- Tattooing PREMISES'",
+                "notes": "Financial year commencing 1 April 2019."
+            },
+            {
+                "year": "2020",
+                "category": "combined_premises_and_practitioners",
+                "metric_type": "new_registrations",
+                "count": 6,
+                "evidence_text": "During each of the financial years the following numbers of applicants were registered by this authority | Financial year Commencing 1 April: 2020 | S.15 Piercing Registration .- Tattooing PERS & PREM: 6",
+                "source_location": "Table 'During each of the financial years...', Row '2020', Column 'S.15 Piercing Registration .- Tattooing PERS & PREM'",
+                "notes": "Financial year commencing 1 April 2020."
+            },
+            {
+                "year": "2020",
+                "category": "tattoo_practitioners",
+                "metric_type": "new_registrations",
+                "count": 20,
+                "evidence_text": "During each of the financial years the following numbers of applicants were registered by this authority | Financial year Commencing 1 April: 2020 | S.15 Piercing Registration. Tattooing -PERSON: 20",
+                "source_location": "Table 'During each of the financial years...', Row '2020', Column 'S.15 Piercing Registration. Tattooing -PERSON'",
+                "notes": "Financial year commencing 1 April 2020."
+            },
+            {
+                "year": "2020",
+                "category": "tattoo_premises",
+                "metric_type": "new_registrations",
+                "count": 7,
+                "evidence_text": "During each of the financial years the following numbers of applicants were registered by this authority | Financial year Commencing 1 April: 2020 | S.15 Piercing Registration.- Tattooing PREMISES: 7",
+                "source_location": "Table 'During each of the financial years...', Row '2020', Column 'S.15 Piercing Registration.- Tattooing PREMISES'",
+                "notes": "Financial year commencing 1 April 2020."
+            },
+            {
+                "year": "2021",
+                "category": "combined_premises_and_practitioners",
+                "metric_type": "new_registrations",
+                "count": 2,
+                "evidence_text": "During each of the financial years the following numbers of applicants were registered by this authority | Financial year Commencing 1 April: 2021 | S.15 Piercing Registration .- Tattooing PERS & PREM: 2",
+                "source_location": "Table 'During each of the financial years...', Row '2021', Column 'S.15 Piercing Registration .- Tattooing PERS & PREM'",
+                "notes": "Financial year commencing 1 April 2021."
+            },
+            {
+                "year": "2021",
+                "category": "tattoo_practitioners",
+                "metric_type": "new_registrations",
+                "count": 41,
+                "evidence_text": "During each of the financial years the following numbers of applicants were registered by this authority | Financial year Commencing 1 April: 2021 | S.15 Piercing Registration. Tattooing -PERSON: 41",
+                "source_location": "Table 'During each of the financial years...', Row '2021', Column 'S.15 Piercing Registration. Tattooing -PERSON'",
+                "notes": "Financial year commencing 1 April 2021."
+            },
+            {
+                "year": "2021",
+                "category": "tattoo_premises",
+                "metric_type": "new_registrations",
+                "count": 15,
+                "evidence_text": "During each of the financial years the following numbers of applicants were registered by this authority | Financial year Commencing 1 April: 2021 | S.15 Piercing Registration.- Tattooing PREMISES: 15",
+                "source_location": "Table 'During each of the financial years...', Row '2021', Column 'S.15 Piercing Registration.- Tattooing PREMISES'",
+                "notes": "Financial year commencing 1 April 2021."
+            },
+            {
+                "year": "2022",
+                "category": "combined_premises_and_practitioners",
+                "metric_type": "new_registrations",
+                "count": 13,
+                "evidence_text": "During each of the financial years the following numbers of applicants were registered by this authority | Financial year Commencing 1 April: 2022 | S.15 Piercing Registration .- Tattooing PERS & PREM: 13",
+                "source_location": "Table 'During each of the financial years...', Row '2022', Column 'S.15 Piercing Registration .- Tattooing PERS & PREM'",
+                "notes": "Financial year commencing 1 April 2022."
+            },
+            {
+                "year": "2022",
+                "category": "tattoo_practitioners",
+                "metric_type": "new_registrations",
+                "count": 52,
+                "evidence_text": "During each of the financial years the following numbers of applicants were registered by this authority | Financial year Commencing 1 April: 2022 | S.15 Piercing Registration. Tattooing -PERSON: 52",
+                "source_location": "Table 'During each of the financial years...', Row '2022', Column 'S.15 Piercing Registration. Tattooing -PERSON'",
+                "notes": "Financial year commencing 1 April 2022."
+            },
+            {
+                "year": "2022",
+                "category": "tattoo_premises",
+                "metric_type": "new_registrations",
+                "count": 18,
+                "evidence_text": "During each of the financial years the following numbers of applicants were registered by this authority | Financial year Commencing 1 April: 2022 | S.15 Piercing Registration.- Tattooing PREMISES: 18",
+                "source_location": "Table 'During each of the financial years...', Row '2022', Column 'S.15 Piercing Registration.- Tattooing PREMISES'",
+                "notes": "Financial year commencing 1 April 2022."
+            },
+            {
+                "year": "2023",
+                "category": "combined_premises_and_practitioners",
+                "metric_type": "new_registrations",
+                "count": 16,
+                "evidence_text": "During each of the financial years the following numbers of applicants were registered by this authority | Financial year Commencing 1 April: 2023 | S.15 Piercing Registration .- Tattooing PERS & PREM: 16",
+                "source_location": "Table 'During each of the financial years...', Row '2023', Column 'S.15 Piercing Registration .- Tattooing PERS & PREM'",
+                "notes": "Financial year commencing 1 April 2023."
+            },
+            {
+                "year": "2023",
+                "category": "tattoo_practitioners",
+                "metric_type": "new_registrations",
+                "count": 64,
+                "evidence_text": "During each of the financial years the following numbers of applicants were registered by this authority | Financial year Commencing 1 April: 2023 | S.15 Piercing Registration. Tattooing -PERSON: 64",
+                "source_location": "Table 'During each of the financial years...', Row '2023', Column 'S.15 Piercing Registration. Tattooing -PERSON'",
+                "notes": "Financial year commencing 1 April 2023."
+            },
+            {
+                "year": "2023",
+                "category": "tattoo_premises",
+                "metric_type": "new_registrations",
+                "count": 18,
+                "evidence_text": "During each of the financial years the following numbers of applicants were registered by this authority | Financial year Commencing 1 April: 2023 | S.15 Piercing Registration.- Tattooing PREMISES: 18",
+                "source_location": "Table 'During each of the financial years...', Row '2023', Column 'S.15 Piercing Registration.- Tattooing PREMISES'",
+                "notes": "Financial year commencing 1 April 2023."
+            },
+            {
+                "year": "2024",
+                "category": "combined_premises_and_practitioners",
+                "metric_type": "new_registrations",
+                "count": 13,
+                "evidence_text": "During each of the financial years the following numbers of applicants were registered by this authority | Financial year Commencing 1 April: 2024 | S.15 Piercing Registration .- Tattooing PERS & PREM: 13",
+                "source_location": "Table 'During each of the financial years...', Row '2024', Column 'S.15 Piercing Registration .- Tattooing PERS & PREM'",
+                "notes": "Financial year commencing 1 April 2024."
+            },
+            {
+                "year": "2024",
+                "category": "tattoo_practitioners",
+                "metric_type": "new_registrations",
+                "count": 67,
+                "evidence_text": "During each of the financial years the following numbers of applicants were registered by this authority | Financial year Commencing 1 April: 2024 | S.15 Piercing Registration. Tattooing -PERSON: 67",
+                "source_location": "Table 'During each of the financial years...', Row '2024', Column 'S.15 Piercing Registration. Tattooing -PERSON'",
+                "notes": "Financial year commencing 1 April 2024."
+            },
+            {
+                "year": "2024",
+                "category": "tattoo_premises",
+                "metric_type": "new_registrations",
+                "count": 32,
+                "evidence_text": "During each of the financial years the following numbers of applicants were registered by this authority | Financial year Commencing 1 April: 2024 | S.15 Piercing Registration.- Tattooing PREMISES: 32",
+                "source_location": "Table 'During each of the financial years...', Row '2024', Column 'S.15 Piercing Registration.- Tattooing PREMISES'",
+                "notes": "Financial year commencing 1 April 2024."
+            },
+            {
+                "year": "2025",
+                "category": "tattoo_practitioners",
+                "metric_type": "new_registrations",
+                "count": 73,
+                "evidence_text": "During each of the financial years the following numbers of applicants were registered by this authority | Financial year Commencing 1 April: 2025 | S.15 Piercing Registration. Tattooing -PERSON: 73",
+                "source_location": "Table 'During each of the financial years...', Row '2025', Column 'S.15 Piercing Registration. Tattooing -PERSON'",
+                "notes": "Financial year commencing 1 April 2025."
+            },
+            {
+                "year": "2025",
+                "category": "tattoo_premises",
+                "metric_type": "new_registrations",
+                "count": 11,
+                "evidence_text": "During each of the financial years the following numbers of applicants were registered by this authority | Financial year Commencing 1 April: 2025 | S.15 Piercing Registration.- Tattooing PREMISES: 11",
+                "source_location": "Table 'During each of the financial years...', Row '2025', Column 'S.15 Piercing Registration.- Tattooing PREMISES'",
+                "notes": "Financial year commencing 1 April 2025."
+            }
+        ],
+        "review_required": false,
+        "review_reason": null
+    },
+    "review_status": "pending",
+    "validation_status": "schema_valid"
+}
