@@ -9,11 +9,12 @@ __pycache__/
 !.env.example
 
 # ignores client data and pipeline generated data
-data/raw/
-data/parsed/
-data/review/
-data/output/
-data/extracted/
+/CIEH_Extraction/data/raw/
+/CIEH_Extraction/data/parsed/
+/CIEH_Extraction/data/extracted/
+/CIEH_Extraction/data/review/
+/CIEH_Extraction/data/output/
+/CIEH_Extraction/data/parsed_backup/
 
 # ignores locally run databases
 *.db
