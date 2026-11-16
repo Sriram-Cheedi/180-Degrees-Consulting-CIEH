@@ -1,9 +1,9 @@
-# ingores Python environment
+# Python environment
 .venv/
 __pycache__/
 *.py[cod]
 
-# igores Environment variables
+# Environment variables
 .env
 .env.*
 !.env.example
@@ -14,14 +14,23 @@ __pycache__/
 /CIEH_Extraction/data/extracted/
 /CIEH_Extraction/data/review/
 /CIEH_Extraction/data/output/
+/CIEH_Extraction/data/incoming/*
+/CIEH_Extraction/data/working/*
+/CIEH_Extraction/data/processed/*
+/CIEH_Extraction/data/master/*
+!/CIEH_Extraction/data/incoming/.gitkeep
+!/CIEH_Extraction/data/working/.gitkeep
+!/CIEH_Extraction/data/processed/.gitkeep
+!/CIEH_Extraction/data/master/.gitkeep
 /CIEH_Extraction/data/parsed_backup/
+/CIEH_Extraction/data/database/
 
 # ignores locally run databases
 *.db
 *.sqlite
 *.sqlite3
 
-# ignires testing and tooling caches
+# Testing and tooling caches
 .pytest_cache/
 .ruff_cache/
 

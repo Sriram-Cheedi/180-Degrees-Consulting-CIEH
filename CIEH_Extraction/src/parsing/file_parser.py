@@ -1,7 +1,5 @@
 from src.parsing.text_parser import parse_text_file
 from src.parsing.spreadsheet_parser import parse_spreadsheet
-from src.parsing.document_parser import parse_document
-from src.parsing.ocr_parser import parse_image, read_scanned_pdf
 
 
 def parse_file(file_metadata):
@@ -13,6 +11,7 @@ def parse_file(file_metadata):
         return parse_spreadsheet(file_metadata)
     elif extension in [".pdf", ".docx"]:
         if extension == ".pdf":
+            from src.parsing.ocr_parser import read_scanned_pdf
             content = read_scanned_pdf(file_metadata.get("file_path"))
 
             return {
@@ -25,8 +24,10 @@ def parse_file(file_metadata):
                 "status": "parsed"
             }
 
+        from src.parsing.document_parser import parse_document
         return parse_document(file_metadata)
     elif extension in [".png", ".jpg", ".jpeg"]:
+        from src.parsing.ocr_parser import parse_image
         return parse_image(file_metadata)
     else:
         raise ValueError(f"Unsupported file format: {extension}")

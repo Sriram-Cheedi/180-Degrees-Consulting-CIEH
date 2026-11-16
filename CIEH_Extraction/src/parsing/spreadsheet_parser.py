@@ -23,9 +23,7 @@ def parse_spreadsheet(file_metadata):
     extension = file_metadata.get("extension")
 
     if extension == ".csv":
-        content = {
-            read_csv_file(file_path)
-        }
+        content = read_csv_file(file_path)
     elif extension in [".xlsx", ".xls"]:
         content = read_excel_file(file_path)
     else:

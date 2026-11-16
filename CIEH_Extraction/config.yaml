@@ -1,0 +1,77 @@
+# Gemini API settings
+gemini:
+  model: gemini-3.6-flash
+  temperature: 0
+  api_key_env: GEMINI_API_KEY
+
+paths:
+  incoming: data/incoming
+  working: data/working
+  processed: data/processed
+  master: data/master/cieh_master.json
+
+json:
+  lines_per_chunk: 100
+  context_overlap_lines: 5
+
+extraction:
+  context: >-
+    CIEH research into UK local authority FOI responses about tattoo premises
+    and practitioner registrations. Extract historical registration figures.
+  record_definition: One observation per council, reported year, category and metric type.
+  rules:
+    - Preserve exact calendar or financial-year labels.
+    - Do not infer new registrations solely because counts are organised by year.
+    - Do not assume general special treatment licensing figures are exclusively tattoo-related. Explain uncertain scope in notes.
+    - Do not count repeated summaries, grand totals or subtotals as additional annual observations.
+    - Use tattoo-related context for premises and practitioners answering the FOI unless unrelated activities are explicitly included.
+    - Never guess council names from filenames. Include supporting evidence and source location where available.
+
+master:
+  output_columns: [council_name, year, category, metric_type, count]
+  columns:
+    - council_name
+    - year
+    - category
+    - metric_type
+    - count
+    - evidence_text
+    - source_location
+    - notes
+  # Optional descriptions make ambiguous columns easier to map correctly.
+  # When renaming/removing columns, update these keys as well.
+  column_definitions:
+    council_name:
+      description: Local authority explicitly identified in the document.
+      aliases: [Council, Local Authority, Authority]
+    year:
+      description: Exact year or financial-year label for the observation.
+      aliases: [Reporting Year, Financial Year]
+    category:
+      description: Tattoo premises, practitioners, an inseparable combined count, other, or unknown scope.
+      allowed_values: [tattoo_premises, tattoo_practitioners, combined_premises_and_practitioners, other, unknown]
+    metric_type:
+      description: What the figure measures; use unknown when the source does not establish it.
+      allowed_values: [active_register_total, new_registrations, applications, other, unknown]
+    count:
+      description: Nonnegative integer count exactly as reported; explicit zero is valid.
+      aliases: [Number, Total, Registrations]
+    evidence_text:
+      description: Source quotation supporting the observation with sufficient surrounding context.
+    source_location:
+      description: Page, sheet, table, row or section containing the evidence.
+    notes:
+      description: Source qualifications, ambiguity or uncertainty needing human review.
+
+# Supported input file extensions
+files:
+  extensions:
+    - .pdf
+    - .docx
+    - .xlsx
+    - .xls
+    - .csv
+    - .txt
+    - .png
+    - .jpg
+    - .jpeg

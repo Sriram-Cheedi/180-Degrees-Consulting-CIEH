@@ -1,324 +1,147 @@
-# CIEH Extraction Pipeline — Setup & Running Guide
+# 180-Degrees-Consulting-CIEH
 
-This guide explains how to set up and run the CIEH FOI data extraction pipeline on a Windows computer using VS Code and PowerShell.
-
-The pipeline uses Python to process council FOI responses, Gemini AI to extract structured records, and Excel for human verification.
-
-## 1. Prerequisites
-
-Install the following software:
-
-- **Python 3.12** — https://www.python.org/downloads/
-- **Git** — https://git-scm.com/downloads
-- **VS Code** — https://code.visualstudio.com/
-
-Make sure Python and Git are accessible from your terminal.
-
-Verify the installations:
+Run the architecture-diagram workflow from the repository root:
 
 ```powershell
-py -3.12 --version
-git --version
+.venv\Scripts\python.exe -m streamlit run CIEH_Extraction\app.py
 ```
 
-## 2. Clone the GitHub repository
+Choose the file format, upload a file, inspect the extracted table, then select
+**Accept and merge** or **Discard**. Gemini calls require `GEMINI_API_KEY` in
+`CIEH_Extraction/.env`. The configured model must be available to your API account.
+The app uses the existing pandas, Docling and OCR parsers; these dependencies
+must be installed in the Python environment.
 
-Open VS Code, then open a PowerShell terminal.
+`CIEH_Extraction/config.yaml` controls supported formats, Gemini settings, incoming,
+working and processed directories, the master JSON path, master column names and
+`json.lines_per_chunk`. Relative paths resolve from the config file's directory.
+Chunks contain at most that many text lines or spreadsheet data rows; spreadsheet
+headers and sheet names are retained as context in every chunk. Keep related
+observations together by increasing the chunk size when needed.
 
-```powershell
-git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY.git
+Every extraction request also receives the **entire parsed document**, including
+all worksheets, plus nearby lines/rows controlled by `json.context_overlap_lines`.
+This lets a table use explanations before or after it, even across chunk or sheet
+boundaries. `working/<upload UUID>/document.json` preserves that shared source;
+each chunk retains its source ID, position and total chunk count. The prompt limits
+extraction to the target chunk's observations so contextual data is not extracted
+again. Meaning must still be scoped to the appropriate table or section.
+
+Full-document context increases API input usage, and large documents can exceed
+the model's input limit. Such requests fail visibly rather than silently dropping
+context. This does not guarantee correct model interpretation; preview remains
+required. Previously extracted uploads need reprocessing to use this behavior.
+
+Uploads are copied into incoming with a UUID, moved into working, parsed to JSON
+chunks and read back for LLM column matching. Only configured columns survive;
+missing values become JSON null. Review is mandatory before merging. Acceptance
+saves a processed JSON file and merges its records into the master JSON. Upload
+IDs prevent the same accepted upload from being merged twice. Identical file contents reuse the existing upload even if the file is renamed; no extra extraction or copy is created. Identical master observations are stored once.
+Discarded and failed uploads remain in working for audit; original files are preserved.
+Pending reviews resume when the app starts. Master schema changes require an
+explicit migration of any existing master. A master lock blocks simultaneous merges;
+after a forced process termination, remove a stale `.lock` only after confirming
+no other merge is running.
+
+The original batch/Excel workflow remains available through `main.py` and `finalize.py`.
+
+The code and data folders follow the architecture:
+
+```text
+CIEH_Extraction/
+  app.py                    # launch the frontend
+  config.yaml               # paths, columns, chunk size, LLM settings
+  src/
+    frontend/streamlit_app.py # upload, preview, accept/discard
+    backend/pipeline.py      # stage uploads and coordinate processing
+    backend/storage.py       # atomic JSON writes
+    ingestion/               # existing batch file discovery and metadata
+    parsing/                 # CSV, Excel, document and OCR parsing
+    ai/                      # existing CIEH extraction tools
+    review/                  # existing Excel review tools
+    validation/              # existing quality checks
+    merge/master.py          # approved processed data -> master
+    settings.py              # load and validate configuration
+  data/
+    incoming/                # temporary UUID uploads
+    working/<upload UUID>/   # source, JSON chunks and review status
+    processed/               # accepted upload JSON
+    master/                  # merged master JSON
+  tests/test_workflow.py     # workflow checks without API calls
 ```
 
-Replace the URL with the actual GitHub repository URL.
+Existing `raw`, `parsed`, `extracted`, `review`, `output` and `database` data
+folders belong to the batch workflow and remain in place. They are not automatically
+migrated into approved data. `src/workflow.py` and `test_workflow.py` retain
+compatibility imports for the new module locations.
 
-Navigate to the Python project folder:
+Local workflow checks (no API calls):
 
 ```powershell
-cd YOUR-REPOSITORY
 cd CIEH_Extraction
+..\.venv\Scripts\python.exe -m unittest test_workflow
 ```
 
-All subsequent commands should be run from `CIEH_Extraction`, where `main.py` and `requirements.txt` are located.
+### Using another industry or dataset
 
-## 3. Create and activate a virtual environment
+The Streamlit workflow builds its extraction prompt from configuration. The default
+configuration retains the tattoo FOI guidance. To change datasets, edit
+`extraction.context`, `extraction.record_definition`, `extraction.rules`, and
+`master.columns`. Optionally describe each field in `master.column_definitions`,
+including source aliases and allowed values. These definitions guide the LLM;
+they do not enforce value types or enum validation in Python.
 
-Create a Python 3.12 environment:
+For example, replace the extraction and master sections for retail invoices:
 
-```powershell
-py -3.12 -m venv .venv
+```yaml
+extraction:
+  context: Retail purchase invoices
+  record_definition: One record per invoice line item
+  rules:
+    - Preserve the currency explicitly stated in the invoice.
+master:
+  columns: [invoice_number, product_name, quantity, unit_price, currency]
+  column_definitions:
+    quantity:
+      description: Number of units purchased on this invoice line.
+      aliases: [Qty, Units]
+    unit_price:
+      description: Price per unit, not the line total; null if absent.
+      aliases: [Unit Cost, Price Each]
 ```
 
-Activate it:
-
-```powershell
-.\.venv\Scripts\Activate.ps1
-```
-
-The terminal should now display `(.venv)`.
-
-If PowerShell blocks activation, you can temporarily allow scripts for the current terminal session:
-
-```powershell
-Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope Process
-.\.venv\Scripts\Activate.ps1
-```
-
-## 4. Install project dependencies
-
-Run:
-
-```powershell
-python -m pip install -r requirements.txt
-```
-
-This installs the required Python libraries, such as Docling, OCR dependencies, Pydantic, pandas, openpyxl and the Gemini SDK, provided they are listed in `requirements.txt`.
-
-Verify that the Gemini SDK works:
-
-```powershell
-python -c "from google import genai; print('Gemini SDK working')"
-```
-
-If you receive `ImportError: cannot import name 'genai' from 'google'`, install the correct package:
-
-```powershell
-python -m pip install google-genai
-```
-
-## 5. Configure the Gemini API key
-
-The pipeline requires a Google Gemini API key.
-
-1. Visit https://aistudio.google.com/apikey
-2. Create or obtain an API key.
-3. Create a file called `.env` inside `CIEH_Extraction`.
-4. Add the API key:
-
-```dotenv
-GEMINI_API_KEY=YOUR_ACTUAL_API_KEY
-```
-
-The variable name must match the project's Gemini client configuration.
-
-**Security:** Never upload `.env` or your API key to GitHub.
-
-Be aware that Gemini usage limits may apply. The model can sometimes return temporary `503 UNAVAILABLE` errors when demand is high.
-
-## 6. Prepare the project folders
-
-The relevant project structure is:
-
-```text
-180-Degrees-Consulting-CIEH/
-├── .gitignore
-├── README.md
-└── CIEH_Extraction/
-    ├── .env
-    ├── .venv/
-    ├── requirements.txt
-    ├── main.py
-    ├── finalize.py
-    ├── parse_pipeline.py
-    ├── src/
-    └── data/
-        ├── raw/
-        ├── parsed/
-        ├── extracted/
-        ├── review/
-        └── output/
-```
-
-If the data folders do not exist, create them from inside `CIEH_Extraction`:
-
-```powershell
-New-Item -ItemType Directory -Force data/raw, data/parsed, data/extracted, data/review, data/output
-```
-
-## 7. Add council FOI documents
-
-Place original council responses inside:
-
-`CIEH_Extraction/data/raw/`
-
-Supported input formats include:
-
-- PDF (`.pdf`)
-- Excel (`.xlsx`, `.xls`)
-- Word (`.docx`)
-- CSV (`.csv`)
-- Text (`.txt`)
-- Images (`.png`, `.jpg`, `.jpeg`)
-
-For example:
-
-```text
-data/
-└── raw/
-    ├── Council_A.pdf
-    ├── Council_B.xlsx
-    ├── Council_C.txt
-    └── Council_D.docx
-```
-
-Files can be placed directly inside `data/raw/`. Separate council folders are not required.
-
-Do not rename or modify the original responses unnecessarily.
-
-## 8. Run the extraction pipeline
-
-Make sure the virtual environment is active and the terminal is inside `CIEH_Extraction`.
-
-Run:
-
-```powershell
-python main.py
-```
-
-The pipeline runs four stages:
-
-**Stage 1 — Document parsing**
-
-Discovers and parses source documents into structured JSON, saved to `data/parsed/`.
-
-**Stage 2 — Gemini extraction**
-
-Sends parsed documents to Gemini and saves the structured extraction records in `data/extracted/`.
-
-Previously successful extractions are skipped when the corresponding output exists.
-
-**Stage 3 — Data-quality checks**
-
-Runs automated checks and generates:
-
-`data/review/data_quality_issues.csv`
-
-This identifies records that may need additional attention, such as missing council names or ambiguous metrics.
-
-**Stage 4 — Excel review synchronisation**
-
-Creates or updates:
-
-`data/review/cieh_review.xlsx`
-
-Existing review records are retained, and new records are appended.
-
-A successful run ends with:
-
-```text
-=== PIPELINE FINISHED ===
-```
-
-Note: Successful processing does not guarantee that AI-extracted values are factually correct. Human verification remains essential.
-
-## 9. Review the extracted data
-
-Open:
-
-`data/review/cieh_review.xlsx`
-
-For every record being reviewed, compare its values against the original council response.
-
-The workbook contains original extraction columns and separate editable review columns.
-
-Set **Review Decision** to one of:
-
-| Decision | Meaning |
-|---|---|
-| `approved` | AI-extracted values have been verified and are correct |
-| `corrected` | One or more extracted values require correction |
-| `rejected` | Record should not be included in the final dataset |
-| Blank | Not yet reviewed |
-
-For `approved` or `corrected` records, enter the reviewer's name.
-
-For corrections, enter the revised value in the appropriate `Corrected` column rather than overwriting the original extraction.
-
-For example:
-
-| Field | Value |
-|---|---|
-| Count | 18 |
-| Review Decision | corrected |
-| Corrected Count | 16 |
-| Reviewer | Reviewer name |
-| Reviewer Notes | Corrected against the council response |
-
-The final exporter uses `16`, while the original extracted value remains available for comparison.
-
-Save and close Excel before running the next stage.
-
-## 10. Export the verified dataset
-
-Run:
-
-```powershell
-python finalize.py
-```
-
-This reads the review workbook, applies approved corrections, validates the resulting records and generates:
-
-```text
-data/output/
-├── cieh_verified.csv
-└── cieh_verified.xlsx
-```
-
-Only approved and corrected records are included. Pending and rejected records are excluded.
-
-If an approved or corrected row has no reviewer name, the exporter will raise an error specifying the Excel row that needs attention.
-
-After a successful export, open `cieh_verified.xlsx` and verify that the expected records and corrected values are present.
-
-## 11. Adding new council responses later
-
-To process more FOI responses:
-
-1. Copy the new files into `data/raw/`.
-2. Run `python main.py` again.
-3. Open `data/review/cieh_review.xlsx`.
-4. Review the newly added records.
-5. Run `python finalize.py` to regenerate the verified outputs.
-
-Previously extracted documents are skipped during the Gemini extraction stage, based on their existing extraction files.
-
-Existing human review decisions are designed to be preserved during review-sheet synchronisation.
-
-Avoid deleting `data/extracted/` or overwriting the master review workbook without a backup.
-
-## 12. Common troubleshooting
-
-**Error: `No module named ...`**
-
-Activate `.venv` and reinstall the dependencies:
-
-```powershell
-python -m pip install -r requirements.txt
-```
-
-**Error: `cannot import name 'genai' from 'google'`**
-
-```powershell
-python -m pip install google-genai
-```
-
-**Error: Gemini API key missing**
-
-Check that `.env` exists, the key is correctly named, and the application loads environment variables.
-
-**Error: `503 UNAVAILABLE`**
-
-Gemini may be temporarily overloaded. Retry later using:
-
-```powershell
-python main.py
-```
-
-Previously completed extraction files should be skipped.
-
-**Error: `Reviewer is required`**
-
-Open `data/review/cieh_review.xlsx`, locate the reported row and enter a reviewer name for the approved or corrected record.
-
-**Error: `PermissionError` involving Excel**
-
-Close the review or output workbook in Excel, then rerun the command.
+Prefer meaningful names and define ambiguous fields. Column names alone work
+with generic instructions if the `extraction` section is omitted, but they cannot
+reliably convey a dataset's business meaning. Remove outdated column definitions
+when replacing columns. Use separate incoming, working, processed and master paths
+for a different dataset, then restart the app to load the edited configuration.
+An existing master with different columns is rejected rather than automatically
+migrated. Uploads retain their extraction specification for audit and cannot be
+accepted under different columns. This configurable behavior applies to `app.py`;
+the legacy batch/Excel workflow remains specific to the CIEH schema.
+
+The default interface is Streamlit with Upload, Review and Master data tabs.
+Review includes a category dropdown for tattoo premises, practitioners and both
+combined (plus all records and any other extracted categories). Select a column
+to correct; count is selected by default. Original fields are read-only, with a
+separate corrected-value column. Blank corrections leave the original unchanged;
+zero is a valid corrected count. Edits carry across category filters. Use
+**Save changes made** before leaving the upload to persist drafts across restarts.
+**Changes made — accept and merge**, or **Accept and merge**, applies all corrections
+across the upload before merging. Original records and corrections remain in the
+processed JSON for audit. Corrections cannot modify an already accepted upload.
+Only the current failed upload shows **Retry extraction**; historical failures are not
+listed. Retry uses the saved source and current settings without another upload.
+Selecting a new upload clears the previous retry control. Reuploading an identical
+failed file retrieves that failed job rather than creating another copy.
+
+`master.output_columns` controls the final master independently of extraction and
+review columns. The tattoo master contains only council_name, year, category,
+metric_type and count. Evidence and notes remain in working/processed review data.
+Reducing master output columns creates a backup before projecting existing records;
+identical projected observations are stored once. File matching is byte-for-byte;
+a differently exported or edited copy may have a different hash.
+
+Install its dependency with `.venv\Scripts\python.exe -m pip install streamlit`.
+The earlier Tkinter frontend remains available as `python -m src.frontend.app`
+from the `CIEH_Extraction` directory.
